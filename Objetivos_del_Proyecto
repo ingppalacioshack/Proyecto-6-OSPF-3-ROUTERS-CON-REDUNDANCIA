@@ -1,0 +1,36 @@
+Proyecto: Implementación de Enrutamiento Dinámico OSPF con Redundancia
+
+Objetivo General
+
+Diseñar, configurar y verificar una red basada en el protocolo de enrutamiento dinámico OSPF (Open Shortest Path First) que proporcione conectividad eficiente y redundante entre tres routers, garantizando la continuidad del servicio ante fallas en los enlaces principales.
+
+Objetivos Específicos
+
+-Configurar las interfaces físicas y loopbacks en los routers con direccionamiento IP adecuado.
+
+-Implementar el protocolo OSPF en todos los dispositivos de la red, asignando router IDs únicos y definiendo las redes que participarán en el proceso de enrutamiento.
+
+-Aplicar autenticación OSPF para reforzar la seguridad en el intercambio de información de enrutamiento.
+
+-Establecer enlaces redundantes entre los routers, asegurando la convergencia automática ante la pérdida de un enlace.
+
+-Verificar la correcta formación de adyacencias OSPF y la actualización de la tabla de rutas en cada router.
+
+-Realizar pruebas de conectividad y simulaciones de fallas para comprobar el balanceo de carga y la tolerancia a fallos de la red.
+
+-Documentar los resultados, conclusiones y recomendaciones sobre la implementación del protocolo OSPF y su desempeño en escenarios con redundancia.
+
+Alcance del Proyecto
+
+El proyecto abarca el diseño y simulación de una topología de red compuesta por tres routers interconectados en una estructura totalmente redundante, empleando el protocolo OSPF en área 0.
+Incluye la configuración de interfaces GigabitEthernet, enlaces punto a punto, loopbacks, y autenticación por clave MD5.
+Además, se realizarán pruebas de comunicación entre todas las redes, verificación de adyacencias y análisis del comportamiento del enrutamiento dinámico frente a fallos simulados.
+
+Este proyecto no contempla la implementación física de los equipos, ni la integración de servicios adicionales (como DHCP o NAT), enfocándose exclusivamente en el funcionamiento del protocolo OSPF y sus capacidades de convergencia y resiliencia.
+
+Justificación
+
+En los entornos empresariales, la disponibilidad y estabilidad de la red son factores críticos. El protocolo OSPF permite una comunicación eficiente entre routers, adaptándose automáticamente a los cambios en la topología mediante la detección de fallas y la recalculación de rutas óptimas.
+
+La implementación de redundancia en la topología asegura la continuidad operativa, evitando interrupciones de servicio ante la caída de un enlace o dispositivo.
+A través de este proyecto, los estudiantes comprenden los principios del enrutamiento dinámico, los beneficios de la convergencia automática y las mejores prácticas para diseñar redes tolerantes a fallos utilizando OSPF en entornos reales o simulados.
