@@ -1,0 +1,101 @@
+PROYETO OSPF
+3 ROUTER CISCO 2911
+REDUNDANCIA Y SEGURIDAD DE REDES
+CREADO POR: ING. PABLO PALACIOS
+
+===================================================
+ROUTER 1 (IZQUIERDA)
+====================================================
+enable
+configure terminal
+hostname Router1
+enable secret 5 MiEnableSecret
+no ip domain-lookup
+ip domain-name red.local
+
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ description enlace a Router3
+ ip address 10.0.13.1 255.255.255.252
+ no shutdown
+ ip ospf network point-to-point
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 cisco123
+!
+interface GigabitEthernet0/1
+ description enlace a Router2
+ ip address 10.0.12.1 255.255.255.252
+ no shutdown
+ ip ospf network point-to-point
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 cisco123
+!
+ip cef
+!
+router ospf 1
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface GigabitEthernet0/0
+ no passive-interface GigabitEthernet0/1
+ network 10.0.13.0 0.0.0.3 area 0
+ network 10.0.12.0 0.0.0.3 area 0
+ network 1.1.1.1 0.0.0.0 area 0
+exit
+write memory
+===================================================
+ROUTER 2 (DERECHA)
+===================================================
+enable
+configure terminal
+hostname Router2
+enable secret 5 MiEnableSecret
+no ip domain-lookup
+ip domain-name red.local
+
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface GigabitEthernet0/0
+ description enlace a Router3
+ ip address 10.0.23.1 255.255.255.252
+ no shutdown
+ ip ospf network point-to-point
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 cisco123
+!
+interface GigabitEthernet0/1
+ description enlace a Router1
+ ip address 10.0.12.2 255.255.255.252
+ no shutdown
+ ip ospf network point-to-point
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 cisco123
+!
+ip cef
+!
+router ospf 1
+ router-id 2.2.2.2
+ passive-interface default
+ no passive-interface GigabitEthernet0/0
+ no passive-interface GigabitEthernet0/1
+ network 10.0.23.0 0.0.0.3 area 0
+ network 10.0.12.0 0.0.0.3 area 0
+ network 2.2.2.2 0.0.0.0 area 0
+exit
+write memory
+
+===================================================
+ROUTER 3 (CENTRO - ARRIBA)
+===================================================
+CENTRO DE PRUEBAS
+===================================================
+show ip interface brief
+show ip ospf neighbor
+show ip route ospf
+ping 10.0.13.2    (desde Router1 hacia Router3)
+ping 10.0.12.2    (desde Router1 hacia Router2)
+ping 3.3.3.3      (desde Router1 hacia loopback Router3)
+ping 2.2.2.2      (desde Router3 hacia loopback Router2)
+===================================================
