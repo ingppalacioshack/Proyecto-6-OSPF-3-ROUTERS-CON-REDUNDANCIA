@@ -12,19 +12,19 @@ asegurando la convergencia automática, la tolerancia a fallos y la correcta pro
 ============================
 Objetivos Específicos
 
-Configurar las interfaces y direccionamiento IP entre los routers para establecer enlaces punto a punto estables y verificables.
+-Configurar las interfaces y direccionamiento IP entre los routers para establecer enlaces punto a punto estables y verificables.
 
-Implementar el protocolo OSPF en todos los routers, definiendo áreas, router IDs y redes a anunciar.
+-Implementar el protocolo OSPF en todos los routers, definiendo áreas, router IDs y redes a anunciar.
 
-Aplicar mecanismos de redundancia y balanceo de carga para mantener la conectividad ante la caída de un enlace principal.
+-Aplicar mecanismos de redundancia y balanceo de carga para mantener la conectividad ante la caída de un enlace principal.
 
-Integrar interfaces loopback en cada router para simular redes internas y comprobar su propagación mediante OSPF.
+-Integrar interfaces loopback en cada router para simular redes internas y comprobar su propagación mediante OSPF.
 
-Verificar el establecimiento de adyacencias OSPF, la tabla de rutas y la comunicación entre todos los nodos mediante comandos de diagnóstico (ping, show ip route, show ip ospf neighbor).
+-Verificar el establecimiento de adyacencias OSPF, la tabla de rutas y la comunicación entre todos los nodos mediante comandos de diagnóstico (ping, show ip route, show ip ospf neighbor).
 
-Evaluar el funcionamiento de la red ante fallas simuladas desconectando enlaces físicos y comprobando la convergencia automática.
+-Evaluar el funcionamiento de la red ante fallas simuladas desconectando enlaces físicos y comprobando la convergencia automática.
 
-Documentar el procedimiento de configuración, los resultados obtenidos y las conclusiones sobre el desempeño y confiabilidad del protocolo OSPF.
+-Documentar el procedimiento de configuración, los resultados obtenidos y las conclusiones sobre el desempeño y confiabilidad del protocolo OSPF.
 
 ============================
 ROUTER 1 (IZQUIERDA)
